@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RentaAutos.Pantallas.Renta"
+             Title="Renta"
+             BackgroundColor="Black">
+    <ScrollView>
+        <StackLayout>
+            <!--Label de nombre de pantalla-->
+            <Label FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" Background="Black" BackgroundColor="White" TextColor="White">Renta de Autos</Label>
+        
+            <!--Placas-->
+            
+            <Picker x:Name="ePlacas" Margin="10" TextColor="White" HorizontalOptions="Center" VerticalOptions="FillAndExpand" SelectedIndexChanged="ePlacas_SelectedIndexChanged"/>
+
+
+            <!--Informacion para agregar -->
+            <Entry x:Name="eMarca" Keyboard="Text" Placeholder="Marca" Margin="10" TextColor="White" IsEnabled="False"/>
+            <Entry x:Name="eModelo" Keyboard="Text" Placeholder="Modelo" Margin="10" TextColor="White" IsEnabled="False"/>
+            <Entry x:Name="ePrecioDia" Keyboard="Numeric" Placeholder="Precio por día" Margin="10" TextColor="White" IsEnabled="False"/>
+
+
+            <!--Fechas de inicio y regreso-->
+            <VerticalStackLayout Spacing="20">
+                <Label Text=" Fecha de Inicio " TextColor="White"/>
+                <DatePicker x:Name="DPFechaInicio" MinimumDate="1970-01-01" Date="{Binding FechaInicio}" DateSelected="DPFechaInicio_DateSelected" BackgroundColor="Black" TextColor="White"/>
+
+                <Label Text=" Fecha de Regreso " TextColor="White"/>
+                <DatePicker x:Name="DPFechaRegreso" MinimumDate="1970-01-01" Date="{Binding FechaRegreso}" DateSelected="DPFechaRegreso_DateSelected" BackgroundColor="Black" TextColor="White"/>
+            </VerticalStackLayout>
+            <!--Precio Total-->
+            <Entry x:Name="ePrecioTotal" Keyboard="Numeric" Placeholder="Precio Total" Margin="10" TextColor="White" IsEnabled="False"/>
+            
+            <!--Boton rentar-->
+            <Button x:Name="btnrentar"  Text="Rentar" TextColor="White" BackgroundColor="White" Background="Black" CornerRadius="10" Margin="10" BorderColor="Gray" Clicked="btnrentar_Clicked"/>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

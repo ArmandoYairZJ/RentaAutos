@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RentaAutos.Pantallas.Registroxaml"
+             Title="Registroxaml"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <StackLayout>
+            <Label FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" Background="Black" BackgroundColor="White" TextColor="White"> Registro de Automoviles </Label>
+            <!--Creamos un frame para poner la iamgen-->
+            <Frame WidthRequest="150" HeightRequest="150"  CornerRadius="10"  HasShadow="True" Padding="5" BorderColor="Transparent">
+                <Image x:Name="imagenCargar" Aspect="Fill"/>
+            </Frame>
+
+            <!--Modificar carros-->
+            <Picker x:Name="EPlACASS" Margin="10" TextColor="White" SelectedIndexChanged="EPlACASS_SelectedIndexChanged"/>
+           
+            <!--Agregamos un boton para que abra la imagen-->
+            
+            <Button x:Name="btnImage" Text="Seleccione la imagen" BackgroundColor="White" TextColor="White" Background="Black"  CornerRadius="10" Margin="10" Clicked="btnAgregarImagen_Clicked" BorderWidth="0"/>
+            
+            <!--Informacion para agregar -->
+            <Entry x:Name="ePlacas" Keyboard="Text" Placeholder="Placas" Margin="10" TextColor="White" />
+            <Entry x:Name="eMrca" Keyboard="Text" Placeholder="Marca" Margin="10" TextColor="White"/>
+            <Entry x:Name="eModelo" Keyboard="Text" Placeholder="Modelo" Margin="10" TextColor="White"/>
+            <Entry x:Name="eAno" Keyboard="Numeric" Placeholder="Año" Margin="10" TextColor="White"/>
+            <Entry x:Name="ePrecioDia" Keyboard="Numeric" Placeholder="Precio por día" Margin="10" TextColor="White"/>
+            
+            <!--Agregamos los dos botones-->
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="bGuardar" Text="Guardar" TextColor="White" BackgroundColor="White" Background="Black" CornerRadius="10" Margin="10" BorderColor="Gray" Clicked="bGuardar_Clicked"/>
+                <Button x:Name="bModificar"  Text="Modificar" TextColor="White" BackgroundColor="Gray" Background="Black" CornerRadius="10" Margin="10" BorderColor="Gray" Clicked="bModificar_Clicked"/>
+            </HorizontalStackLayout>
+            
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
